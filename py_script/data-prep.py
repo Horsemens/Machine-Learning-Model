@@ -47,4 +47,8 @@ for i in range(len(input_files)):
 # all_data.dropna(inplace=True)
 
 print(all_data.head())
-
+print(all_data.size)
+print(all_data.shape)
+all_data = all_data[:10000]
+print(all_data.shape)
+all_data.to_excel("../all-data.xlsx")
