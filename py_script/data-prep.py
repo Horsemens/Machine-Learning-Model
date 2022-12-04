@@ -1,8 +1,8 @@
-import imp
 from msilib import add_data
 import pandas as pd
 import glob
 import os
+import sys 
 
 input_files = glob.glob("../datasets/ECU_DATA/2018*.csv", recursive=True)
 
@@ -43,12 +43,5 @@ for i in range(len(input_files)):
     else:
         all_data = pd.concat([all_data, df])
 
-
-# all_data.dropna(inplace=True)
-
-print(all_data.head())
-print(all_data.size)
-print(all_data.shape)
-all_data = all_data[:10000]
-print(all_data.shape)
-all_data.to_excel("../all-data.xlsx")
+all_data = all_data[:int(sys.argv[1])]
+all_data.to_csv("../all-data.csv")
