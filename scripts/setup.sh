@@ -10,7 +10,7 @@ fi
 
 
 NO_OF_ROWS_IN_DATA=10000
-if [-z $1]
+if [ -z $1 ]
 then
     NO_OF_ROWS_IN_DATA=10000
 else
